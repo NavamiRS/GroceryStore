@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [TestRunnerSuite]">
+  <test thread-count="5" name="MySecondTest(failed)">
+    <parameter name="Browser" value="chrome"/>
+    <classes>
+      <class name="testCases.ManageProductPageTestCases">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="verifyThatUploadedImageIsDisplayedFromRemote"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testCases.ManageProductPageTestCases -->
+    </classes>
+  </test> <!-- MySecondTest(failed) -->
+</suite> <!-- Failed suite [TestRunnerSuite] -->

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [MyFirstSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="MyTestSuite(failed)">
+    <parameter name="Browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="SmokeTest"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="testCases.ManageProductPageTestCases">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="addNewPdtToPdctManagmtPage"/>
+        </methods>
+      </class> <!-- testCases.ManageProductPageTestCases -->
+    </classes>
+  </test> <!-- MyTestSuite(failed) -->
+</suite> <!-- Failed suite [MyFirstSuite] -->

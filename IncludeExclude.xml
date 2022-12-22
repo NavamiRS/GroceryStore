@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestRunnerSuite">
+<test name="MySecondTest">
+<parameter name="Browser" value="chrome"></parameter>
+<classes>
+<class name="testCases.LoginTestCases">
+<methods>
+<exclude name="profileNameStyleValidation"/>
+<!--<include name="profileNameStyleValidation"/> -->
+</methods>
+</class>
+</classes>
+</test>
+</suite>

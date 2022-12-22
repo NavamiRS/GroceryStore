@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [parallel Testing]">
+  <test thread-count="5" parallel="methods" name="MyFirstParallelTest(failed)">
+    <parameter name="Browser" value="chrome"/>
+    <classes>
+      <class name="testCases.ManageProductPageTestCases">
+        <methods>
+          <include name="verifyDeleteOptionWorkinSucessfully"/>
+          <include name="verify_The_Pdt_Stock_Status"/>
+          <include name="verifyThatUploadedImageIsDisplayed"/>
+          <include name="verifyTheStockRadioBtnIsSelectedByDefault"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="addNewPdtToPdctManagmtPage"/>
+        </methods>
+      </class> <!-- testCases.ManageProductPageTestCases -->
+    </classes>
+  </test> <!-- MyFirstParallelTest(failed) -->
+</suite> <!-- Failed suite [parallel Testing] -->

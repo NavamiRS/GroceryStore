@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="MyFirstSuite">
+<test name="MyTestSuite">
+<parameter name="Browser" value="chrome"></parameter>
+<groups>
+<run>
+<include name="SmokeTest">
+</include>
+</run>
+</groups>
+<classes>
+<class name="testCases.ManageDeliverBoyTestCases"/>
+<class name="testCases.ManageProductPageTestCases">
+</class>
+</classes>
+</test>
+</suite>
