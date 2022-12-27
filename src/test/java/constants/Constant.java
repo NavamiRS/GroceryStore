@@ -67,4 +67,28 @@ public class Constant {
 	
 	public static final String PAYMENTMODE="Bank";
 	public static final String PAYMENTMODEERROR="----Paymentmode is not visible as expected-------------------";
+	public static final String PAYMENTMODE_ORDERIDERROR="-------OrderId Not Found----------";
+	public static final String PAYMENTMODE_DROPDOWNSIZE_ERROR="-----------Inavalid dropdown size--------";
+	
+	
+	public static final String MANAGE_LOCATION_EDIT_STATE_FIRST_SELECTED_OPTION="Belfast";
+	public static final String MANAGE_LOCATION_EDIT_STATE_FIRST_SELECTED_OPTION_ERROR="-----------FIRST SELECTED OPTION IS INCORRECT--------";
+
+
+	public static final String MANAGEUSER_ADDNEWUSERALERT="×\n"
+			+ "Alert!\n"
+			+ "User Created Successfully";
+
+	public static final String MANAGEUSER_ADDNEWUSERALERTERROR="-----UNABLE TO ADD NEW USER TO THE MANAGEUSERPAGE";
+	
+	
+	public static final String MANAGEUSER_ADDALREADYEXISTSUSERALERT="×\n"
+			+ "Alert!\n"
+			+ "Username already exists.";
+	
+	public static final String MANAGEUSER_ADDALREADYEXISTSUSERALERTERROR="-------------------NEW USER DETAILS-----------------------";
+
+
+
+
 }

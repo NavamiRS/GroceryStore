@@ -1,4 +1,5 @@
 package elementRepository;
+
 import java.util.FormatFlagsConversionMismatchException;
 import java.util.List;
 
@@ -13,16 +14,15 @@ import utilities.GeneralUtilities;
 
 public class ManageOrderPage {
 
-
-
 	WebDriver driver;
-	GeneralUtilities gu=new GeneralUtilities();
+	GeneralUtilities gu = new GeneralUtilities();
 	String actualPaymentModeText;
-	public ManageOrderPage(WebDriver driver) 
-	{
-		this.driver=driver;
+
+	public ManageOrderPage(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+
 	@FindBy(xpath = ("//p[text()='Manage Orders']"))
 	WebElement manage_Order;
 
@@ -32,13 +32,11 @@ public class ManageOrderPage {
 	@FindBy(xpath = ("//a[normalize-space()='Reset']"))
 	WebElement reset;
 
-
 	@FindBy(xpath = ("//input[@id='od']"))
 	WebElement order_Id;
 
 	@FindBy(xpath = ("//input[@id='um']"))
 	WebElement user_Id;
-
 
 	@FindBy(xpath = ("//select[@id='pt']"))
 	WebElement payment_Mode;
@@ -46,23 +44,19 @@ public class ManageOrderPage {
 	@FindBy(xpath = ("//select[@id='st']"))
 	WebElement status;
 
-
 	@FindBy(xpath = ("//button[normalize-space()='Search']"))
 	WebElement search_ListOrder;
 
 	@FindBy(xpath = ("//button[normalize-space()='Reset']"))
 	WebElement reset_ListOrder;
 
-
 	@FindBy(xpath = ("//table[@class='table table-bordered table-hover table-sm']//tbody//tr[1]//td[1]"))
 	WebElement orderId_TrTd_1;
-	
+
 	@FindBy(xpath = ("//table[@class='table table-bordered table-hover table-sm']//tbody//tr[1]//td[5]"))
 	WebElement paymentModeTd_5;
 
-
-
-	//---------------------------------ACTIONS-------------------------------------------
+	// ---------------------------------ACTIONS-------------------------------------------
 
 	public boolean searchPaymentModeListDetails() throws InterruptedException {
 
@@ -73,24 +67,24 @@ public class ManageOrderPage {
 		gu.selectFuncbyindex(payment_Mode, 2);
 		gu.clickToTheElement(search_ListOrder, driver);
 
-		List<WebElement>paymentMode_Lists=driver.findElements(By.xpath("//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[5]"));
-		int size=paymentMode_Lists.size();
-		
-		for(int i=0;i<size;i++) {
-			String paymentModeList=paymentMode_Lists.get(i).getText();
-			//System.out.println(paymentModeList);
-			if (paymentModeList.equals("Bank")) { 
-			return true;
+		List<WebElement> paymentMode_Lists = driver.findElements(
+				By.xpath("//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[5]"));
+		int size = paymentMode_Lists.size();
 
-			} 
+		for (int i = 0; i < size; i++) {
+			String paymentModeList = paymentMode_Lists.get(i).getText();
+			// System.out.println(paymentModeList);
+			if (paymentModeList.equals("Bank")) {
+
+				return true;
+
+			}
 
 		}
 		return false;
-		
-		
 
 	}
-	
+
 	public void orderIdAndPaymentModeVeri() {
 		gu.clickToTheElement(manage_Order, driver);
 		gu.clickToTheElement(search, driver);
@@ -99,23 +93,23 @@ public class ManageOrderPage {
 	}
 
 	public String orderIdVerification() {
-		
-		
+
 		return gu.getElementText(orderId_TrTd_1);
-		
+
 	}
+
 	public String PaymentModeVerification() {
-		
+
 		return gu.getElementText(paymentModeTd_5);
-		
+
 	}
-	
+
 	public int statusDropDown() {
 		gu.clickToTheElement(manage_Order, driver);
 		gu.clickToTheElement(search, driver);
-		Select select=new Select(status);
-		List<WebElement>statusList=select.getOptions();
-		int size=statusList.size();
+		Select select = new Select(status);
+		List<WebElement> statusList = select.getOptions();
+		int size = statusList.size();
 		return size;
 	}
 }

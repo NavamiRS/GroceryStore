@@ -4,13 +4,13 @@
   <test thread-count="5" name="MySecondTest(failed)">
     <parameter name="Browser" value="chrome"/>
     <classes>
-      <class name="testCases.ManageProductPageTestCases">
+      <class name="testCases.AdminUsersPageTestCases">
         <methods>
           <include name="afterMethod"/>
-          <include name="verifyThatUploadedImageIsDisplayedFromRemote"/>
           <include name="beforeMethod"/>
+          <include name="verifyAddAlreadyExistsUserDetails"/>
         </methods>
-      </class> <!-- testCases.ManageProductPageTestCases -->
+      </class> <!-- testCases.AdminUsersPageTestCases -->
     </classes>
   </test> <!-- MySecondTest(failed) -->
 </suite> <!-- Failed suite [TestRunnerSuite] -->

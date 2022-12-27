@@ -1,15 +1,19 @@
 package utilities;
 
 import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import com.github.javafaker.Faker;
+
 public class GeneralUtilities 
 {
 	WebDriver driver;
 	JavascriptExecutor js;
+	static Faker faker;
 	public String getElementText(WebElement element) 
 	{
 		String text=element.getText();
@@ -99,7 +103,13 @@ public class GeneralUtilities
 		String firstoption = select1.getFirstSelectedOption().getText();
 		return (firstoption);
 	}
-
+	public void randomUserNames(WebElement element) {
+		faker=new Faker();
+		String userName=faker.name().username();
+		element.sendKeys(userName);
+	}
+	
+	
 
 
 	

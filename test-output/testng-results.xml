@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="TestRunnerSuite" duration-ms="29442" started-at="2022-12-22T12:28:29 IST" finished-at="2022-12-22T12:28:59 IST">
+  <suite name="TestRunnerSuite" duration-ms="14148" started-at="2022-12-25T22:24:18 IST" finished-at="2022-12-25T22:24:32 IST">
     <groups>
     </groups>
-    <test name="MySecondTest" duration-ms="29442" started-at="2022-12-22T12:28:29 IST" finished-at="2022-12-22T12:28:59 IST">
-      <class name="testCases.ManageOrderPageTestCases">
-        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.ManageOrderPageTestCases@74ad1f1f]" name="beforeMethod" is-config="true" duration-ms="20903" started-at="2022-12-22T12:28:30 IST" finished-at="2022-12-22T12:28:50 IST">
+    <test name="MySecondTest" duration-ms="14148" started-at="2022-12-25T22:24:18 IST" finished-at="2022-12-25T22:24:32 IST">
+      <class name="testCases.AdminUsersPageTestCases">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.AdminUsersPageTestCases@69b0fd6f]" name="beforeMethod" is-config="true" duration-ms="9423" started-at="2022-12-25T22:24:18 IST" finished-at="2022-12-25T22:24:28 IST">
           <params>
             <param index="0">
               <value>
@@ -18,22 +18,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="getalloptions()[pri:0, instance:testCases.ManageOrderPageTestCases@74ad1f1f]" name="getalloptions" duration-ms="7825" started-at="2022-12-22T12:28:50 IST" finished-at="2022-12-22T12:28:58 IST">
+        <test-method status="PASS" signature="verifyAddAlreadyExistsUserDetails()[pri:2, instance:testCases.AdminUsersPageTestCases@69b0fd6f]" name="verifyAddAlreadyExistsUserDetails" duration-ms="4369" started-at="2022-12-25T22:24:28 IST" description="Add a already exist user details to admin users page and verify it" finished-at="2022-12-25T22:24:32 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getalloptions -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.ManageOrderPageTestCases@74ad1f1f]" name="afterMethod" is-config="true" duration-ms="606" started-at="2022-12-22T12:28:58 IST" finished-at="2022-12-22T12:28:59 IST">
+        </test-method> <!-- verifyAddAlreadyExistsUserDetails -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.AdminUsersPageTestCases@69b0fd6f]" name="afterMethod" is-config="true" duration-ms="306" started-at="2022-12-25T22:24:32 IST" finished-at="2022-12-25T22:24:32 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=getalloptions status=SUCCESS method=ManageOrderPageTestCases.getalloptions()[pri:0, instance:testCases.ManageOrderPageTestCases@74ad1f1f] output={null}]]]>
+                <![CDATA[[TestResult name=verifyAddAlreadyExistsUserDetails status=SUCCESS method=AdminUsersPageTestCases.verifyAddAlreadyExistsUserDetails()[pri:2, instance:testCases.AdminUsersPageTestCases@69b0fd6f] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- testCases.ManageOrderPageTestCases -->
+      </class> <!-- testCases.AdminUsersPageTestCases -->
     </test> <!-- MySecondTest -->
   </suite> <!-- TestRunnerSuite -->
 </testng-results>
