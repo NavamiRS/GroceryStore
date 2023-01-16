@@ -5,6 +5,8 @@ public class Constant {
 	public static final String EXPECTEDPROFILENAME="Admin" ;
 	public static final String LOGINERROR="invalid login";
 	
+	public static final String LOGINERRORS="Valid login";
+	
 	public static final String ADMIN_CLR_PPTY="rgba(255, 255, 255, 0.75)";
 	public static final String STYLE_ERROR="Profle color is not like as expected";
 	
@@ -88,7 +90,18 @@ public class Constant {
 	
 	public static final String MANAGEUSER_ADDALREADYEXISTSUSERALERTERROR="-------------------NEW USER DETAILS-----------------------";
 
+	public static final String ADMINUSERNAME="@qwerty769";
+	
+	public static final String ADMINUSERNAME_ERROR="---! Username not found---";
+	
+	public static final String EXPECTED_DELIVERY_ALERT_MSG="×\n"
+			+ "Alert!\n"
+			+ "Delivery Date Updated Successfully";
+	public static final String EXPECTED_DELIVERY_ALERT_MSG_ERROR="---! Search not found---";
+	
+	public static final String ACTIVESTATUSCOUNTERROR="----Status count showing incorrect------";
+	public static final String ACTIVESTATUSCOUNT="16";
 
-
-
+	
+	
 }

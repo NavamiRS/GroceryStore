@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [RetrySuite]">
+  <listeners>
+    <listener class-name="testCases.AnnotationTransformer"/>
+  </listeners>
+  <test thread-count="5" name="MyFirstRetryTest(failed)">
+    <parameter name="Browser" value="chrome"/>
+    <classes>
+      <class name="testCases.AdminUsersPageTestCases">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="verifyTheSearchBtnWorking"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testCases.AdminUsersPageTestCases -->
+    </classes>
+  </test> <!-- MyFirstRetryTest(failed) -->
+</suite> <!-- Failed suite [RetrySuite] -->

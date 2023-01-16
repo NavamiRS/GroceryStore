@@ -3,9 +3,9 @@
 <test name="MySecondTest">
 <parameter name="Browser" value="chrome"></parameter>
 <classes>
-<class name="testCases.AdminUsersPageTestCases">
+<class name="testCases.ManageOrderPageTestCases">
 <methods>
-<include name="verifyAddAlreadyExistsUserDetails"/>
+<include name="verifyThatOrderIdAndPaymentModeWhileClickingSearchOption"/>
 </methods>
 </class>
 </classes>

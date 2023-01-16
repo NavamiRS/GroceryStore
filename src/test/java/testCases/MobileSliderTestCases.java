@@ -11,7 +11,7 @@ public class MobileSliderTestCases extends BaseClass {
 	LoginPage lp;
 	MobileSliderPage msp;
 
-	@Test(priority = 1, alwaysRun = true, description = "title verification")
+	@Test(priority = 1,  description = "title verification",groups = { "SanityTest" })
 	public void verifyTheTitleOfMsp() throws InterruptedException {
 		lp = new LoginPage(driver);
 		msp = new MobileSliderPage(driver);
@@ -23,7 +23,7 @@ public class MobileSliderTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 2, alwaysRun = true, description = "first image dispalyed or not")
+	@Test(priority = 2, description = "first image dispalyed or not")
 	public void verifyTheFirstImgIsDisplayed() throws InterruptedException {
 		lp = new LoginPage(driver);
 		msp = new MobileSliderPage(driver);
@@ -34,7 +34,7 @@ public class MobileSliderTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 3, alwaysRun = true, description = "image status")
+	@Test(priority = 3,  description = "image status")
 	public void verifyTheFirstImgStatus() throws InterruptedException {
 		lp = new LoginPage(driver);
 		msp = new MobileSliderPage(driver);

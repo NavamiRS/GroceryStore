@@ -12,7 +12,7 @@ public class DashboardTestCases extends BaseClass {
 	LoginPage lp;
 	Dashboard db;
 
-	@Test(priority = 1, alwaysRun = true, description = "validating title of manageExpense")
+	@Test(priority = 1,  description = "validating title of manageExpense")
 	public void verifyTitleOfManageExpense() {
 		lp = new LoginPage(driver);
 		db = new Dashboard(driver);
@@ -23,7 +23,7 @@ public class DashboardTestCases extends BaseClass {
 		Assert.assertEquals(actualName_ManageExpense, expectedName_ManageExpense, Constant.MANAGEEXPENSE_TITLE_ERROR);
 	}
 
-	@Test(priority = 2, alwaysRun = true, description = "validating title of manageUsers")
+	@Test(priority = 2,  description = "validating title of manageUsers")
 	public void verifyTitleOfManageUsers() {
 
 		lp = new LoginPage(driver);
@@ -36,7 +36,7 @@ public class DashboardTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 3, alwaysRun = true, description = "validating Home text background color")
+	@Test(priority = 3,  description = "validating Home text background color")
 
 	public void home_Background_Clr_Style_Verification() {
 		lp = new LoginPage(driver);

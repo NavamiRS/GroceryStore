@@ -4,14 +4,16 @@
 <parameter name="Browser" value="chrome"></parameter>
 <groups>
 <run>
-<include name="SmokeTest">
-</include>
+<include name="SmokeTest"/>
+<include name="SanityTest"/>
+<include name="RegressionTest"/>
 </run>
 </groups>
 <classes>
 <class name="testCases.ManageDeliverBoyTestCases"/>
-<class name="testCases.ManageProductPageTestCases">
-</class>
+<class name="testCases.ManageProductPageTestCases"/>
+<class name="testCases.MobileSliderTestCases"/>
+<class name="testCases.PushNotificationTestCases"/>
 </classes>
 </test>
 </suite>

@@ -4,6 +4,7 @@ import java.util.FormatFlagsConversionMismatchException;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,11 +12,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import utilities.GeneralUtilities;
+import utilities.Syncronisation;
 
 public class ManageOrderPage {
 
 	WebDriver driver;
 	GeneralUtilities gu = new GeneralUtilities();
+	Syncronisation sn=new Syncronisation();
 	String actualPaymentModeText;
 
 	public ManageOrderPage(WebDriver driver) {
@@ -44,8 +47,14 @@ public class ManageOrderPage {
 	@FindBy(xpath = ("//select[@id='st']"))
 	WebElement status;
 
-	@FindBy(xpath = ("//button[normalize-space()='Search']"))
-	WebElement search_ListOrder;
+	
+	@FindBy(xpath = ("//button[normalize-space()='Search']")) WebElement
+	  search_ListOrder;
+	 
+	@FindBy(xpath = "//body/div[1]/div[1]/section[1]/div[3]/div[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[7]/button[1]")
+	WebElement SearchListOrders_Ex;
+	
+	
 
 	@FindBy(xpath = ("//button[normalize-space()='Reset']"))
 	WebElement reset_ListOrder;
@@ -55,6 +64,25 @@ public class ManageOrderPage {
 
 	@FindBy(xpath = ("//table[@class='table table-bordered table-hover table-sm']//tbody//tr[1]//td[5]"))
 	WebElement paymentModeTd_5;
+	
+	@FindBy(xpath = "//a[contains(text(),'Change Delivery Date')]")
+	WebElement changeDeliveryDateOfSearchedOrder;
+	
+	@FindBy(xpath = "(//button[@class='btn btn-info'])[2]")
+	WebElement updateButton;
+	
+	@FindBy(xpath = "//input[@class='jquery-datepicker__input datepicker1']")
+	WebElement deliveryDate;
+	
+	@FindBy(xpath = "//input[@id='basicExample']")
+	WebElement fromTime;
+	
+	@FindBy(xpath = "//input[@id='basicExample1']")
+	WebElement toTime;
+	
+	@FindBy(xpath = "//body/div[1]/div[1]/section[1]/div[2]/div[1]/div[1]")
+	WebElement deliveryDateAlert;
+	
 
 	// ---------------------------------ACTIONS-------------------------------------------
 
@@ -88,8 +116,9 @@ public class ManageOrderPage {
 	public void orderIdAndPaymentModeVeri() {
 		gu.clickToTheElement(manage_Order, driver);
 		gu.clickToTheElement(search, driver);
-		gu.sendText(order_Id, "367");
-		gu.clickToTheElement(search_ListOrder, driver);
+		gu.sendText(order_Id, "325");
+		sn.clickElement(driver,"//body/div[1]/div[1]/section[1]/div[3]/div[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[7]/button[1]");
+		gu.clickOnElement(SearchListOrders_Ex);
 	}
 
 	public String orderIdVerification() {
@@ -112,4 +141,49 @@ public class ManageOrderPage {
 		int size = statusList.size();
 		return size;
 	}
+	
+
+	public void clickOnChangeDeliveryDateOfSearchedOrder() throws InterruptedException {
+		gu.mediumDelay(3000);
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView();", changeDeliveryDateOfSearchedOrder);
+		sn.elementIsToBeClickable(driver, "//a[contains(text(),'Change Delivery Date')]");
+		js.executeScript("arguments[0].click();", changeDeliveryDateOfSearchedOrder);
+		
+		
+	}
+	public void sendDeliveryDate(String date) {
+		gu.sendText(deliveryDate, date);
+	}
+	public void sendFromTime(String fTime) {
+		fromTime.clear();
+		gu.sendText(fromTime, fTime);
+	}
+	public void sendToTime(String TTime) {
+		toTime.clear();
+		gu.sendText(toTime, TTime);
+	}
+	public void clickOnUpdateButton() throws InterruptedException {
+		gu.mediumDelay(3000);
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView();", updateButton);
+		js.executeScript("arguments[0].click();", updateButton);
+	}
+	public String getTextAlertOfChangeDeliveryDate() {
+		return gu.getElementText(deliveryDateAlert);
+	}
+	
+	public void changeDeliveryDate() throws InterruptedException {
+		
+		orderIdAndPaymentModeVeri();
+		clickOnChangeDeliveryDateOfSearchedOrder();
+		sendDeliveryDate("22052022");
+		sendFromTime("11.00am");
+		sendToTime("11:30am");
+		clickOnUpdateButton();
+		
+	}
+	
+	
+	
 }

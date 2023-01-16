@@ -4,13 +4,13 @@
   <test thread-count="5" name="MySecondTest(failed)">
     <parameter name="Browser" value="chrome"/>
     <classes>
-      <class name="testCases.AdminUsersPageTestCases">
+      <class name="testCases.ManageOrderPageTestCases">
         <methods>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
-          <include name="verifyAddAlreadyExistsUserDetails"/>
+          <include name="verifyTheChangeDeliveryDateOfSearchedOrder"/>
         </methods>
-      </class> <!-- testCases.AdminUsersPageTestCases -->
+      </class> <!-- testCases.ManageOrderPageTestCases -->
     </classes>
   </test> <!-- MySecondTest(failed) -->
 </suite> <!-- Failed suite [TestRunnerSuite] -->

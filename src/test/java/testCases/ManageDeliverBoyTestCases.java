@@ -13,7 +13,7 @@ public class ManageDeliverBoyTestCases extends BaseClass {
 	Dashboard db;
 	ManageDeliveryBoy mdb;
 
-	@Test(priority = 1, description = "tooltipvalidation", groups = { "SmokeTest" }, alwaysRun = true)
+	@Test(priority = 1, description = "tooltipvalidation", groups = { "SmokeTest" })
 	public void validateToolTip() throws InterruptedException {
 		lp = new LoginPage(driver);
 
@@ -27,7 +27,7 @@ public class ManageDeliverBoyTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 2, description = "New Button Style Validation", alwaysRun = true)
+	@Test(priority = 2, description = "New Button Style Validation")
 
 	public void newStyleValidation() throws InterruptedException {
 		lp = new LoginPage(driver);
@@ -41,7 +41,7 @@ public class ManageDeliverBoyTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 3, description = "New Button Style Validation", alwaysRun = true)
+	@Test(priority = 3, description = "New Button Style Validation")
 
 	public void verifySearchBtnIsClickable() throws InterruptedException {
 		lp = new LoginPage(driver);

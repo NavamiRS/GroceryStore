@@ -13,8 +13,8 @@ public class LoginTestCases extends BaseClass {
 	LoginPage lp;
 	List<String> loginList;
 
-	@Test(priority = 1, alwaysRun = true, description = "login with valid credentials (credentials access from constant class)")
-	public void verifyLoggedUsers() {
+	@Test(priority = 1,  description = "login with valid credentials (credentials access from constant class)")
+	public void verifyLoginProfile() {
 		lp = new LoginPage(driver);
 		lp.presteps();
 
@@ -24,7 +24,7 @@ public class LoginTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 2, alwaysRun = true, description = "Profile name color validation")
+	@Test(priority = 2,  description = "Profile name color validation")
 	public void profileNameStyleValidation() {
 		lp = new LoginPage(driver);
 		lp.presteps();
@@ -35,27 +35,26 @@ public class LoginTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 3, description = "login using dataprovider", dataProvider = "data", alwaysRun = true)
-	public void verifyLoggedUsersDataProvider(String username, String password) {
+	@Test(priority = 3, description = "login using dataprovider", dataProvider = "data")
+	public void verifyLoginProfile(String username, String password) {
 		lp = new LoginPage(driver);
 		// lp.presteps();
 		lp.getUserName(username);
 		lp.getPassWord(password);
 		lp.clickSignin();
 
-		String expectedProfileName = Constant.EXPECTEDPROFILENAME;// access from Constant class
-		String actualProfileName = lp.profileVerification();
-		Assert.assertEquals(actualProfileName, expectedProfileName, Constant.LOGINERROR);// access from Constant class
+		boolean actualResult=lp.alertMsg();
+		Assert.assertTrue(actualResult,Constant.LOGINERRORS );
 
 	}
 
 	@DataProvider(name = "data")
 	public Object[][] getUserData() {
-		return new Object[][] { { "admin", "admin" }, { "admin2", "admin4" }, { "admin54", "admin" },
+		return new Object[][] {{ "admin2", "admin4" }, { "admin54", "admin" },
 				{ "admin", "admin2" }, };
 	}
 
-	@Test(priority = 4, description = "validate remenberme checkbox is slected or not", alwaysRun = true)
+	@Test(priority = 4, description = "validate remenberme checkbox is slected or not")
 	public void remenberMeCheckBoxValidation() {
 		lp = new LoginPage(driver);
 		lp.getUserName("admin");
@@ -67,11 +66,15 @@ public class LoginTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 5, description = "login credentials access from excel", alwaysRun = true)
+	@Test(priority = 5, description = "login credentials access from excel")
 	public void excelRead() {
 		lp = new LoginPage(driver);
 		loginList = lp.getLoginDetails();
 		System.out.println(loginList);
 		lp.excelSteps(loginList.get(0), loginList.get(1));
+		String expectedProfileName = Constant.EXPECTEDPROFILENAME;
+		String actualProfileName = lp.profileVerification();
+		Assert.assertEquals(actualProfileName, expectedProfileName, Constant.LOGINERROR);
+
 	}
 }

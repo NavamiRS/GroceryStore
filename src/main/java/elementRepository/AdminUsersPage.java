@@ -59,6 +59,20 @@ public class AdminUsersPage {
 	@FindBy(xpath = ("//div[@class='alert alert-danger alert-dismissible']"))
 	WebElement alreadyExistUserAlert;
 	
+	@FindBy(xpath = ("//tbody/tr[1]/td[1]"))
+	WebElement username_Search;
+	
+	@FindBy(xpath = ("//button[@name='Search']"))
+	WebElement search_Search;
+	
+	
+	@FindBy(xpath = ("//input[@id='un']"))
+	WebElement search_UserName;
+	
+	@FindBy(xpath = ("//select[@id='ut']"))
+	WebElement search_Type;
+	
+	
 	//--------------------------Action-----------------------------------
 	
 	public String addNewUser() throws InterruptedException {
@@ -86,6 +100,20 @@ public class AdminUsersPage {
 		gu.selectFuncbyViText(userType, "Admin");
 		gu.clickToTheElement(save, driver);
 		return gu.getElementText(alreadyExistUserAlert);
+		
+	}
+	
+	//--------------------------------------------------------------------
+	public String searchUserName() throws InterruptedException {
+		gu.scrollToTheElement(manageUsers, driver);
+		gu.mediumDelay(2000);
+		gu.clickToTheElement(manageUsers, driver);
+		gu.clickToTheElement(searchBtn, driver);
+		gu.sendText(search_UserName,"@qwerty769");
+		gu.selectFuncbyViText(search_Type, "Admin");
+		gu.clickToTheElement(search_Search, driver);
+		return gu.getElementText(username_Search);
+		
 		
 	}
 

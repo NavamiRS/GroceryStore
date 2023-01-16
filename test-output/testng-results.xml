@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="30" total="33" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="TestRunnerSuite" duration-ms="14148" started-at="2022-12-25T22:24:18 IST" finished-at="2022-12-25T22:24:32 IST">
+  <suite name="My Extent Report Suite" duration-ms="43690" started-at="2023-01-16T17:21:55 IST" finished-at="2023-01-16T17:22:39 IST">
     <groups>
+      <group name="SanityTest">
+        <method signature="MobileSliderTestCases.verifyTheTitleOfMsp()[pri:1, instance:testCases.MobileSliderTestCases@67b467e9]" name="verifyTheTitleOfMsp" class="testCases.MobileSliderTestCases"/>
+      </group> <!-- SanityTest -->
+      <group name="SmokeTest">
+        <method signature="ManageDeliverBoyTestCases.validateToolTip()[pri:1, instance:testCases.ManageDeliverBoyTestCases@3578436e]" name="validateToolTip" class="testCases.ManageDeliverBoyTestCases"/>
+      </group> <!-- SmokeTest -->
+      <group name="RegressionTest">
+        <method signature="PushNotificationTestCases.verifyTheTitleOfPnPage()[pri:1, instance:testCases.PushNotificationTestCases@47db50c5]" name="verifyTheTitleOfPnPage" class="testCases.PushNotificationTestCases"/>
+      </group> <!-- RegressionTest -->
     </groups>
-    <test name="MySecondTest" duration-ms="14148" started-at="2022-12-25T22:24:18 IST" finished-at="2022-12-25T22:24:32 IST">
-      <class name="testCases.AdminUsersPageTestCases">
-        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.AdminUsersPageTestCases@69b0fd6f]" name="beforeMethod" is-config="true" duration-ms="9423" started-at="2022-12-25T22:24:18 IST" finished-at="2022-12-25T22:24:28 IST">
+    <test name="My Test" duration-ms="43690" started-at="2023-01-16T17:21:55 IST" finished-at="2023-01-16T17:22:39 IST">
+      <class name="testCases.PushNotificationTestCases">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.PushNotificationTestCases@47db50c5]" name="beforeMethod" is-config="true" duration-ms="5980" started-at="2023-01-16T17:22:30 IST" finished-at="2023-01-16T17:22:36 IST">
           <params>
             <param index="0">
               <value>
@@ -18,22 +27,78 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifyAddAlreadyExistsUserDetails()[pri:2, instance:testCases.AdminUsersPageTestCases@69b0fd6f]" name="verifyAddAlreadyExistsUserDetails" duration-ms="4369" started-at="2022-12-25T22:24:28 IST" description="Add a already exist user details to admin users page and verify it" finished-at="2022-12-25T22:24:32 IST">
+        <test-method status="PASS" signature="verifyTheTitleOfPnPage()[pri:1, instance:testCases.PushNotificationTestCases@47db50c5]" name="verifyTheTitleOfPnPage" duration-ms="2342" started-at="2023-01-16T17:22:36 IST" description="Title validation for PushNotification page" finished-at="2023-01-16T17:22:38 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAddAlreadyExistsUserDetails -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.AdminUsersPageTestCases@69b0fd6f]" name="afterMethod" is-config="true" duration-ms="306" started-at="2022-12-25T22:24:32 IST" finished-at="2022-12-25T22:24:32 IST">
+        </test-method> <!-- verifyTheTitleOfPnPage -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.PushNotificationTestCases@47db50c5]" name="afterMethod" is-config="true" duration-ms="1013" started-at="2023-01-16T17:22:38 IST" finished-at="2023-01-16T17:22:39 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyAddAlreadyExistsUserDetails status=SUCCESS method=AdminUsersPageTestCases.verifyAddAlreadyExistsUserDetails()[pri:2, instance:testCases.AdminUsersPageTestCases@69b0fd6f] output={null}]]]>
+                <![CDATA[[TestResult name=verifyTheTitleOfPnPage status=SUCCESS method=PushNotificationTestCases.verifyTheTitleOfPnPage()[pri:1, instance:testCases.PushNotificationTestCases@47db50c5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- testCases.AdminUsersPageTestCases -->
-    </test> <!-- MySecondTest -->
-  </suite> <!-- TestRunnerSuite -->
+      </class> <!-- testCases.PushNotificationTestCases -->
+      <class name="testCases.MobileSliderTestCases">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.MobileSliderTestCases@67b467e9]" name="beforeMethod" is-config="true" duration-ms="5262" started-at="2023-01-16T17:22:18 IST" finished-at="2023-01-16T17:22:23 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="verifyTheTitleOfMsp()[pri:1, instance:testCases.MobileSliderTestCases@67b467e9]" name="verifyTheTitleOfMsp" duration-ms="5036" started-at="2023-01-16T17:22:23 IST" description="title verification" finished-at="2023-01-16T17:22:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheTitleOfMsp -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.MobileSliderTestCases@67b467e9]" name="afterMethod" is-config="true" duration-ms="1474" started-at="2023-01-16T17:22:28 IST" finished-at="2023-01-16T17:22:30 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheTitleOfMsp status=SUCCESS method=MobileSliderTestCases.verifyTheTitleOfMsp()[pri:1, instance:testCases.MobileSliderTestCases@67b467e9] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testCases.MobileSliderTestCases -->
+      <class name="testCases.ManageDeliverBoyTestCases">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.ManageDeliverBoyTestCases@3578436e]" name="beforeMethod" is-config="true" duration-ms="13285" started-at="2023-01-16T17:21:56 IST" finished-at="2023-01-16T17:22:10 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="validateToolTip()[pri:1, instance:testCases.ManageDeliverBoyTestCases@3578436e]" name="validateToolTip" duration-ms="7403" started-at="2023-01-16T17:22:10 IST" description="tooltipvalidation" finished-at="2023-01-16T17:22:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateToolTip -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.ManageDeliverBoyTestCases@3578436e]" name="afterMethod" is-config="true" duration-ms="973" started-at="2023-01-16T17:22:17 IST" finished-at="2023-01-16T17:22:18 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validateToolTip status=SUCCESS method=ManageDeliverBoyTestCases.validateToolTip()[pri:1, instance:testCases.ManageDeliverBoyTestCases@3578436e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testCases.ManageDeliverBoyTestCases -->
+    </test> <!-- My Test -->
+  </suite> <!-- My Extent Report Suite -->
 </testng-results>

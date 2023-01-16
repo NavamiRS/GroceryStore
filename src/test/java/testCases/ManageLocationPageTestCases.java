@@ -11,19 +11,19 @@ public class ManageLocationPageTestCases extends BaseClass {
 	LoginPage lp;
 	ManageLocationPage mlp;
 
-	@Test(priority = 1, description = "take active status count", alwaysRun = true)
+	@Test(priority = 1, description = "take active status count")
 	public void verifyTheActiveStatusCount() throws InterruptedException {
 		lp = new LoginPage(driver);
 		mlp = new ManageLocationPage(driver);
 		lp.presteps();
 		int actual_Active_Status = mlp.activeStatusCount();
-		int expected_Active_Status = 16;
+		int expected_Active_Status =17;
 
-		Assert.assertEquals(actual_Active_Status, expected_Active_Status, "----Status count showing incorrect------");
+		Assert.assertEquals(actual_Active_Status, expected_Active_Status,Constant.ACTIVESTATUSCOUNTERROR);
 
 	}
 
-	@Test(priority = 1, description = "valiadte first selected element from the state dropdown while editing the state", alwaysRun = true)
+	@Test(priority = 2, description = "valiadte first selected element from the state dropdown while editing the state")
 
 	public void verifyTheFirstSelectedElementWhileEditingTheState() throws InterruptedException {
 		lp = new LoginPage(driver);

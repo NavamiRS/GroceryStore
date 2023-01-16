@@ -1,6 +1,7 @@
-package elementRepository;
+package elementRepository;	
 
 import java.awt.AWTException;
+
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,12 +11,14 @@ import org.openqa.selenium.support.PageFactory;
 
 import utilities.FileHandling;
 import utilities.GeneralUtilities;
+import utilities.Syncronisation;
 
 public class ManageProductPage {
 	WebDriver driver;
 	GeneralUtilities gu = new GeneralUtilities();
 	FileHandling fh = new FileHandling();
-
+	Syncronisation sn=new Syncronisation();
+	
 	public ManageProductPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -91,54 +94,12 @@ public class ManageProductPage {
 	public void click_New() {
 		gu.clickOnElement(new_Btn);
 	}
-
-	public void enterDataToTilte() {
-		gu.sendText(title, "Coconutoil");
+	public void change_Stock_Status() {
+		gu.clickOnElement(stock_status);
 	}
-
-	public void selectProductType() {
-		gu.clickOnElement(pdt_Type);
-	}
-
-	public void selectCategory() throws InterruptedException {
-		gu.clickOnElement(category);
-		gu.mediumDelay(3000);
-		gu.dropdownSelect_By_Visibletxt(category, 2);
-
-	}
-
-	public void selectSubCategory() throws InterruptedException {
-		gu.clickOnElement(sub_Category);
-		gu.mediumDelay(2000);
-		gu.dropdownSelect_By_Visibletxt(sub_Category, 5);
-	}
-
-	public void selectPriceType() {
-		gu.clickOnElement(price_Type);
-	}
-
-	public void enterWaitValue() throws InterruptedException {
-		gu.sendText(weight_Value, "20");
-	}
-
-	public void selectWaitUnit() throws InterruptedException {
-
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", weight_Unit);
-		gu.mediumDelay(2000);
-		gu.dropdownSelect_By_Visibletxt(weight_Unit, 2);
-	}
-
-	public void enterMaxQuntyCanOrder() {
-		gu.sendText(max_Qnty_Can_Ord, "2");
-	}
-
-	public void enterPrice() {
-		gu.sendText(price, "200");
-	}
-
-	public void enterStockAvilability() {
-		gu.sendText(stock_Avilability, "Limited");
+	public String get_Stock_Status_Alert() {
+		String actual_alt = gu.getElementText(stock_Staus_Alert);
+		return actual_alt;
 	}
 
 	public void imageUpload_SendKeys() throws InterruptedException, AWTException {
@@ -163,50 +124,18 @@ public class ManageProductPage {
 	}
 
 	public void javascriptexe() throws InterruptedException {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", save);
+		/*
+		 * JavascriptExecutor js = (JavascriptExecutor) driver;
+		 * js.executeScript("arguments[0].scrollIntoView();", save);
+		 */
+		
 		gu.mediumDelay(2000);
-	}
-
-	public void saveItem() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", save);
 	}
 
 	public String alertMsg() {
 		String actualAlertMsg = gu.getElementText(alert_Msg);
 		return actualAlertMsg;
 
-	}
-
-	public void stepToFollowToAddItems() throws InterruptedException, AWTException {
-		click_Pdt_Mngt();
-		click_New();
-		enterDataToTilte();
-		selectProductType();
-		selectCategory();
-		selectSubCategory();
-		selectPriceType();
-		javascriptexe();
-		enterWaitValue();
-		selectWaitUnit();
-		enterMaxQuntyCanOrder();
-		enterPrice();
-		enterStockAvilability();
-		javascriptexe();
-		imageUpload_SendKeys();
-		mutilpleImageUpload();
-		saveItem();
-
-	}
-
-	public void change_Stock_Status() {
-		gu.clickOnElement(stock_status);
-	}
-
-	public String get_Stock_Status_Alert() {
-		String actual_alt = gu.getElementText(stock_Staus_Alert);
-		return actual_alt;
 	}
 
 	public boolean imageVerification() throws InterruptedException, AWTException {

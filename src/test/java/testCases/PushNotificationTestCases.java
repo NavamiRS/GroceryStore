@@ -12,7 +12,8 @@ public class PushNotificationTestCases extends BaseClass {
 	LoginPage lp;
 	PushNotificationsPage pnp;
 
-	@Test(priority = 1, description = "Title validation for PushNotification page", alwaysRun = true)
+	@Test(priority = 1, description = "Title validation for PushNotification page", groups = {
+	"RegressionTest" })
 	public void verifyTheTitleOfPnPage() {
 		lp = new LoginPage(driver);
 		pnp = new PushNotificationsPage(driver);
@@ -23,7 +24,7 @@ public class PushNotificationTestCases extends BaseClass {
 		Assert.assertEquals(actual_Title_PnPage, expected_Title_PnPage, Constant.TITLE_ERROR);
 	}
 
-	@Test(priority = 2, description = "get text of aleert message", alwaysRun = true)
+	@Test(priority = 2, description = "get text of aleert message")
 	public void verifyTheAlertMsgText() {
 		lp = new LoginPage(driver);
 		pnp = new PushNotificationsPage(driver);
@@ -39,7 +40,7 @@ public class PushNotificationTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 3, description = "get bg clr of aleert message", alwaysRun = true)
+	@Test(priority = 3, description = "get bg clr of aleert message")
 	public void verifyTheAlertTextBgColor() {
 		lp = new LoginPage(driver);
 		pnp = new PushNotificationsPage(driver);
@@ -55,7 +56,7 @@ public class PushNotificationTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 4, description = "get clr of send button", alwaysRun = true)
+	@Test(priority = 4, description = "get clr of send button")
 	public void verifyTheSendBtnColor() {
 		lp = new LoginPage(driver);
 		pnp = new PushNotificationsPage(driver);
@@ -68,7 +69,7 @@ public class PushNotificationTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 5, description = "get clr of send button", alwaysRun = true)
+	@Test(priority = 5, description = "get clr of send button")
 	public void verifyTheMandatorySignClr() {
 		lp = new LoginPage(driver);
 		pnp = new PushNotificationsPage(driver);

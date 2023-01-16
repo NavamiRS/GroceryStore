@@ -38,6 +38,9 @@ public class LoginPage {
 
 	@FindBy(xpath = "//input[@id='remember']")
 	WebElement verificationOfRememberCheckBox;
+	
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")
+	WebElement alertVerification;
 
 //---------------Actions------------------------------
 
@@ -89,5 +92,8 @@ public class LoginPage {
 		gu.sendText(userName, userNameee);
 		gu.sendText(password, passworddd);
 		clickSignin();
+	}
+	public boolean alertMsg() {
+		return gu.elementIsDisplayed(alertVerification);
 	}
 }

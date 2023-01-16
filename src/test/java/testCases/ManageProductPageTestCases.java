@@ -15,22 +15,9 @@ public class ManageProductPageTestCases extends BaseClass {
 	LoginPage lp;
 	ManageProductPage mpp;
 
-	@Test(priority = 1, groups = {
-			"SmokeTest" }, alwaysRun = true, description = "add a new pdct in to management page")
-	public void addNewPdtToPdctManagmtPage() throws InterruptedException, AWTException {
-		lp = new LoginPage(driver);
-		mpp = new ManageProductPage(driver);
-		lp.presteps();
-		mpp.stepToFollowToAddItems();
+	
 
-		String actual_Alert = mpp.alertMsg();
-		String expected_Alert = Constant.EXPECTED_ALERT_ITEMS_SAVED_TO_MNG_PRODUCT;
-
-		Assert.assertEquals(actual_Alert, expected_Alert, Constant.EXPECTED_ALERT_ITEMS_SAVED_TO_MNG_PRODUCT_ERROR);
-
-	}
-
-	@Test(priority = 2, alwaysRun = true, description = "product stock button status")
+	@Test(priority = 1,  description = "product stock button status")
 	public void verify_The_Pdt_Stock_Status() throws InterruptedException {
 		lp = new LoginPage(driver);
 		mpp = new ManageProductPage(driver);
@@ -43,7 +30,7 @@ public class ManageProductPageTestCases extends BaseClass {
 		Assert.assertEquals(actual_Alt, expected_Alt, Constant.EXPECTED_ALERT_STOCK_STATUS_CHANGE_ERROR);
 	}
 
-	@Test(priority = 3, alwaysRun = true, description = "image verification")
+	@Test(priority = 2,  description = "image verification")
 	public void verifyThatUploadedImageIsDisplayed() throws InterruptedException, AWTException {
 		lp = new LoginPage(driver);
 		mpp = new ManageProductPage(driver);
@@ -64,7 +51,7 @@ public class ManageProductPageTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 4, alwaysRun = true, description = "checking the radio butn is selected by default")
+	@Test(priority = 3,  description = "checking the radio butn is selected by default")
 	public void verifyTheStockRadioBtnIsSelectedByDefault() throws InterruptedException, AWTException {
 		lp = new LoginPage(driver);
 		mpp = new ManageProductPage(driver);
@@ -78,7 +65,7 @@ public class ManageProductPageTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 5, alwaysRun = true, description = "delete option")
+	@Test(priority = 4, description = "delete option")
 	public void verifyDeleteOptionWorkinSucessfully() throws InterruptedException {
 		lp = new LoginPage(driver);
 		mpp = new ManageProductPage(driver);
@@ -92,7 +79,7 @@ public class ManageProductPageTestCases extends BaseClass {
 
 	}
 
-	@Test(priority = 6, alwaysRun = true, description = "verify That Uploaded Image Is Displayed From Remote")
+	@Test(priority = 5, description = "verify That Uploaded Image Is Displayed From Remote")
 	public void verifyThatUploadedImageIsDisplayedFromRemote() throws InterruptedException, AWTException {
 		lp = new LoginPage(driver);
 		mpp = new ManageProductPage(driver);

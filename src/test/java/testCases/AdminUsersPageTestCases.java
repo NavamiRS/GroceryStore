@@ -12,7 +12,7 @@ public class AdminUsersPageTestCases extends BaseClass {
 	LoginPage lp;
 	AdminUsersPage aup;
 
-	@Test(priority = 1, alwaysRun = true, description = "Add a new user details to adminusers page and verify it")
+	@Test(priority = 1, description = "Add a new user details to adminusers page and verify it")
 	public void verifyAddNewAUserToAdminUsersPageWorkingProperly() throws InterruptedException {
 		lp = new LoginPage(driver);
 		aup = new AdminUsersPage(driver);
@@ -23,7 +23,7 @@ public class AdminUsersPageTestCases extends BaseClass {
 		Assert.assertEquals(actual_Save_Result, expected_Save_Result, Constant.MANAGEUSER_ADDNEWUSERALERTERROR);
 	}
 
-	@Test(priority = 2, alwaysRun = true, description = "Add a already exist user details to admin users page and verify it")
+	@Test(priority = 2,  description = "Add a already exist user details to admin users page and verify it")
 	public void verifyAddAlreadyExistsUserDetails() throws InterruptedException {
 		lp = new LoginPage(driver);
 		aup = new AdminUsersPage(driver);
@@ -35,4 +35,18 @@ public class AdminUsersPageTestCases extends BaseClass {
 				Constant.MANAGEUSER_ADDALREADYEXISTSUSERALERTERROR);
 
 	}
+	
+	
+	 @Test(priority = 3,description = "search a username",retryAnalyzer = retryTest.RetryAnalyser.class)
+	 public void verifyTheSearchBtnWorking() throws InterruptedException { lp =
+	 new LoginPage(driver); aup = new AdminUsersPage(driver); lp.presteps();
+	 String actual_Search_Result = aup.searchUserName();
+	 String expected_Search_Result=Constant.ADMINUSERNAME;
+	 
+	 Assert.assertEquals(actual_Search_Result, expected_Search_Result, Constant.ADMINUSERNAME_ERROR);
+	 
+	  
+	  
+	  }
+	 
 }
